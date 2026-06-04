@@ -1,279 +1,133 @@
-# STUDENT EVENT REGISTRATION SYSTEM
+# Student Event Registration System
 
-## 1. Project Overview
+## Project Title Finalization
 
-College events play an important role in enhancing student engagement, skill development, and extracurricular participation. However, managing event registrations manually can be time-consuming and error-prone. This project provides a digital platform that allows students to register for events online while enabling organizers to efficiently manage participants, attendance, notifications, and event-related activities.
+### Project Title
 
----
+**Student Event Registration System**
 
-## 2. Problem Analysis and Requirement Gathering
+### Description
 
-In many educational institutions, event registration and participant management are handled manually through forms and spreadsheets. This often leads to duplicate entries, data inconsistencies, and difficulties in tracking registrations.
-
-The Student Event Registration System addresses these challenges by providing an automated platform for event creation, registration, attendance tracking, certificate generation, and event reporting.
+The Student Event Registration System is a web-based application designed to simplify the process of organizing and managing college events. The system allows students to register for events online and enables administrators to efficiently manage event details, participant registrations, attendance, notifications, and reports.
 
 ---
 
-## 3. Objectives and Goals
+## Requirement Gathering
+
+### Problem Statement
+
+Managing student event registrations manually can be time-consuming and prone to errors. Traditional methods such as paper forms and spreadsheets make it difficult to track participants, manage attendance, and generate reports efficiently.
+
+### Proposed Solution
+
+The Student Event Registration System provides a centralized platform where students can view available events, register online, receive notifications, and participate in events. Administrators can create events, monitor registrations, track attendance, and generate reports.
+
+### Functional Requirements
+
+* Student registration and login
+* Admin login and authentication
+* Event creation and management
+* Online event registration
+* Participant management
+* Attendance tracking
+* Certificate generation
+* Notification system
+* Feedback collection
+* Report generation
+
+### Non-Functional Requirements
+
+* User-friendly interface
+* Secure authentication
+* Fast response time
+* Data integrity and reliability
+* Scalability and maintainability
+
+---
+
+## Objective Definition
 
 ### Main Objective
 
-To develop a web-based Student Event Registration System that simplifies event management and enables students to register and participate in events efficiently.
+To develop a web-based Student Event Registration System that automates the event registration process and improves event management efficiency for educational institutions.
 
 ### Specific Objectives
 
-* To provide secure student registration and login functionality.
-* To allow administrators to create and manage events.
-* To enable students to browse and register for available events.
-* To track participant registrations and attendance.
+* To provide secure user authentication.
+* To enable online event registration.
+* To simplify event creation and management.
+* To maintain participant records effectively.
+* To track attendance digitally.
 * To generate participation certificates automatically.
-* To send notifications and updates regarding events.
-* To collect participant feedback after events.
-* To generate reports and analytics for event organizers.
-* To improve event management efficiency and user experience.
+* To collect feedback from participants.
+* To provide analytical reports for administrators.
+* To improve communication between organizers and participants.
 
 ---
 
-## 4. User Roles and System Modules
+## User and Module Identification
 
-### 1. User Authentication Module
+### Users
 
-Allows students and administrators to register, log in, and securely access the system.
+#### Administrator
 
-### 2. Event Creation Module
+* Create and manage events
+* View registrations
+* Manage participants
+* Track attendance
+* Generate reports and certificates
 
-Enables administrators to create, update, and manage event details.
+#### Student
 
-### 3. Event Registration Module
-
-Allows students to view and register for available events.
-
-### 4. Participant Management Module
-
-Manages registered participants and their event information.
-
-### 5. Attendance Tracking Module
-
-Records participant attendance during events.
-
-### 6. Notification Module
-
-Sends event reminders, updates, and announcements.
-
-### 7. Certificate Generation Module
-
-Automatically generates participation certificates for attendees.
-
-### 8. Feedback Management Module
-
-Collects feedback and ratings from participants after event completion.
-
-### 9. Dashboard and Reporting Module
-
-Displays event statistics, participant counts, and reports.
-
-### 10. Database Administration Module
-
-Stores and manages all user, event, and registration data.
+* Register and log in
+* Browse available events
+* Register for events
+* View registration status
+* Download certificates
+* Submit feedback
 
 ---
 
-## 5. Database Requirement Analysis
+### System Modules
 
-The system must support the following operations:
+#### 1. User Authentication Module
 
-### User Management
+Handles user registration, login, and account security.
 
-Users can register and log in.
+#### 2. Event Management Module
 
-Store user details:
+Allows administrators to create, update, and delete event details.
 
-* user_id (Primary Key)
-* name
-* email (Unique)
-* password (Encrypted)
-* role
+#### 3. Event Registration Module
 
-### Event Management
+Enables students to register for events online.
 
-Administrators can create and manage events.
+#### 4. Participant Management Module
 
-Each event contains:
+Maintains records of registered participants.
 
-* event_id (Primary Key)
-* event_name
-* description
-* event_date
-* venue
-* organizer
+#### 5. Attendance Management Module
 
-### Registration Management
+Tracks attendance during events.
 
-Students can register for events.
+#### 6. Notification Module
 
-Registration details:
+Sends event announcements and reminders.
 
-* registration_id (Primary Key)
-* user_id (Foreign Key)
-* event_id (Foreign Key)
-* registration_date
-* status
+#### 7. Certificate Generation Module
 
-### Attendance Management
+Generates certificates for event participants.
 
-Attendance records contain:
+#### 8. Feedback Management Module
 
-* attendance_id (Primary Key)
-* registration_id (Foreign Key)
-* attendance_status
+Collects participant reviews and suggestions.
 
-### Relationship Handling
+#### 9. Report Generation Module
 
-* One User → Multiple Event Registrations (1:M)
-* One Event → Multiple Registrations (1:M)
-* One Registration → One Attendance Record (1:1)
+Produces event and participation reports.
 
-### Integrity Requirements
+#### 10. Database Management Module
 
-#### Primary Keys
+Stores and manages all system data efficiently.
 
-* user_id
-* event_id
-* registration_id
-* attendance_id
-
-#### Unique Constraints
-
-* email must be unique
-
-#### Foreign Keys
-
-* registration.user_id → user.user_id
-* registration.event_id → event.event_id
-* attendance.registration_id → registration.registration_id
-
-#### Relationship Constraints
-
-* User → Registration = One-to-Many (1:M)
-* Event → Registration = One-to-Many (1:M)
-* Registration → Attendance = One-to-One (1:1)
-
----
-
-## 6. ER Diagram Design
-
-Insert the ER Diagram image here.
-
-docs/ERDiagram.png
-
----
-
-# Technology Stack
-
-## Frontend
-
-* HTML
-* CSS
-* JavaScript
-* Bootstrap
-
-## Backend
-
-* PHP
-
-## Database
-
-* MySQL
-
-## Server
-
-* Apache Server (XAMPP)
-
-## Development Tools
-
-* Visual Studio Code
-* GitHub
-* Postman
-
----
-
-# System Features
-
-* Student Registration and Login
-* Event Creation and Management
-* Online Event Registration
-* Participant Management
-* Attendance Tracking
-* Event Notifications
-* Certificate Generation
-* Feedback Collection
-* Dashboard Analytics
-* Report Generation
-
----
-
-# Project Workflow
-
-Student Login/Register
-
-↓
-
-Browse Available Events
-
-↓
-
-Event Registration
-
-↓
-
-Registration Confirmation
-
-↓
-
-Event Participation
-
-↓
-
-Attendance Tracking
-
-↓
-
-Certificate Generation
-
-↓
-
-Feedback Submission
-
-↓
-
-Dashboard and Report Generation
-
----
-
-# Current Progress
-
-## Completed
-
-* Project Title Finalization
-* Requirement Gathering
-* Technology Stack Selection
-* Literature Survey
-
-## In Progress
-
-* Objective Definition
-* Module Design
-* Database Design
-* User Interface Design
-* ER Diagram Creation
-
-## Upcoming Tasks
-
-* Frontend Development
-* Backend Development
-* Database Implementation
-* Integration Testing
-* System Testing
-* Documentation
-* Final Deployment
 
